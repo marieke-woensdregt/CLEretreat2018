@@ -13,6 +13,15 @@ from scipy import mean, random, spatial, stats, std
 ############ INSERT pairwise_distances() ############
 
 
+def pairwise_distances(listofstrings):
+	n = len(listofstrings)
+	pwdistlist = []
+	for i in range(0, n-1):
+		for j in range(i+1, n):
+			dist = levenshtein_distance(listofstrings[i], listofstrings[j])
+			pwdistlist.append(dist)
+	return pwdistlist
+
 
 ############ END OF pairwise_distances() ############
 
